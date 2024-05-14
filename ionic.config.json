@@ -1,0 +1,7 @@
+{
+  "name": "ph-examenfinal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
