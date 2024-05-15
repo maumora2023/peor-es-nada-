@@ -48,5 +48,4 @@ export class PubliFormComponent  implements OnInit {
     })
     this.picture = image.dataUrl
   }
-
 }
