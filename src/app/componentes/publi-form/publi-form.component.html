@@ -6,7 +6,7 @@
     required="required" 
     minlength="5"
     #titulo="ngModel"
-    placeholder="Mascota perdida">
+    placeholder="Agregue un titulo a su aviso">
       <div slot="label">Título</div>
     </ion-input>
   </ion-item>
@@ -17,12 +17,16 @@
 
 <ion-item>
   <ion-button slot="start" (click)="takePicture()">
-    <ion-icon slot="start" name="camera-outline" />
+    <ion-icon slot="start" name="camera-outline"></ion-icon>
     Fotografía
   </ion-button>
-  <ion-img slot="end" style="height: 200px" [src]="picture">
-  </ion-img>
+  <ion-img slot="end" style="height: 200px" [src]="picture"></ion-img>
 </ion-item>
+
+<!-- Contenedor para la vista previa de la imagen -->
+<div *ngIf="mensaje.image" class="image-preview">
+  <ion-img [src]="mensaje.image"></ion-img>
+</div>
 
 <ion-list>
   <ion-item>
@@ -32,14 +36,14 @@
     required="required" 
     minlength="20"
     #descri="ngModel"
-    placeholder="Gatito siamés macho, de 2 años...">
+    placeholder="Realice una descripcion de su aviso">
       <div slot="label">Descripción </div>
     </ion-input>
   </ion-item>
   <ion-item *ngIf="!descri.valid && !descri.pristine">
     <ion-text color="danger">Debe escribir más de 20 caracteres</ion-text>
   </ion-item>
-</ion-list >
+</ion-list>
 
 <ion-button 
   size="small" 

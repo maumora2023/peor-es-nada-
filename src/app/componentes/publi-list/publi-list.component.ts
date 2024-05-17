@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { PublicacionesService } from 'src/app/servicios/publicaciones.service';
 import { ModalController } from '@ionic/angular/standalone';
-import { ModalComponent } from '../modal/modal.component';
 import { Publicacion } from 'src/app/modelo/publicacion';
+import { PublicacionesService } from 'src/app/servicios/publicaciones.service';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-publi-list',
@@ -19,6 +19,12 @@ export class PubliListComponent  implements OnInit {
   @Input() publicacion: Publicacion[] = []
 
   id: number = 0
+tituloStr: any;
+takePicture: any;
+picture: any;
+mensaje: any;
+descripcionStr: any;
+onClick: any;
 
   constructor(
     private publiService: PublicacionesService,
